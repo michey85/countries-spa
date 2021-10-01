@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 const Wrapper = styled.article`
     border-radius: var(--radii);
-
+    background-color: var(--colors-ui-base);
+    box-shadow: var(--shadow);
+    cursor: pointer;
 `;
 
 const CardImage = styled.img`
@@ -14,28 +16,34 @@ const CardImage = styled.img`
 `;
 
 const CardBody = styled.div`
-    padding: 1rem;
+    padding: 1rem 1.5rem 2rem;
 `;
 
 const CardTitle = styled.h3`
     margin: 0;
-    font-size: var(--fs-sm);
+    font-size: var(--fs-md);
     font-weight: var(--fw-bold);
 `;
 
 const CardList = styled.ul`
     padding: 1rem 0 0;
     list-style: none;
+    margin: 0;
 `;
 
 const CardListItem = styled.li`
     font-size: var(--fs-sm);
+    line-height: 1.5;
     font-weight: var(--fw-light);
+
+    & > b {
+        font-weight: var(--fw-bold);
+    }
 `;
 
-export const Card = ({img, title, info = []}) => {
+export const Card = ({img, title, info = [], onClick}) => {
     return (
-        <Wrapper>
+        <Wrapper onClick={onClick}>
             <CardImage src={img} alt={title} />
             <CardBody>
                 <CardTitle>{title}</CardTitle>

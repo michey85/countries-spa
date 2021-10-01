@@ -7,9 +7,6 @@ import { HomePage } from './pages/HomePage';
 import { NotFound } from './pages/NotFound';
 import { CountryPage } from './pages/CountryPage';
 
-// import { Controls } from './components/Controls';
-// import {List} from './components/List';
-
 function App() {
   return (
     <>

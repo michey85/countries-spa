@@ -17,6 +17,7 @@ const ModeSwitcher = styled.div`
     color: var(--colors-text);
     font-size: 14px;
     cursor: pointer;
+    text-transform: capitalize;
 `;
 
 const Wrapper = styled.div`
@@ -40,7 +41,6 @@ export const Header = () => {
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
   }, [theme]);
-    const capMode = theme[0].toUpperCase() + theme.slice(1);
 
     return (
         <HeaderEl>
@@ -56,7 +56,7 @@ export const Header = () => {
                         <span
                             style={{marginLeft: '0.75rem'}}
                         >
-                            {capMode} Mode
+                            {theme} Mode
                         </span>
                     </ModeSwitcher>
                 </Wrapper>

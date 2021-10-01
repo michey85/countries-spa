@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { IoMoonOutline, IoMoon } from "react-icons/io5";
 
@@ -29,21 +30,35 @@ const HeaderEl = styled.header`
     box-shadow: 0 2px 12px 5px grey;
 `;
 
-export const Header = ({mode = 'dark', changeMode}) => {
-    const capMode = mode[0].toUpperCase() + mode.slice(1);
+export const Header = () => {
+    const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  }
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme);
+  }, [theme]);
+    const capMode = theme[0].toUpperCase() + theme.slice(1);
 
     return (
         <HeaderEl>
             <Container>
                 <Wrapper>
                     <Title>Where is the world?</Title>
-                    <ModeSwitcher onClick={changeMode}>
-                        {mode === 'light' ? (
+                    <ModeSwitcher onClick={toggleTheme}>
+                        {theme === 'light' ? (
                             <IoMoonOutline size="14px" />
                         ): (
                             <IoMoon size="14px" /> 
                         )}
-                        {' '} {capMode} Mode</ModeSwitcher>
+                        <span
+                            style={{marginLeft: '0.75rem'}}
+                        >
+                            {capMode} Mode
+                        </span>
+                    </ModeSwitcher>
                 </Wrapper>
             </Container>
         </HeaderEl>

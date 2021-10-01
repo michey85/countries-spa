@@ -9,6 +9,13 @@ const InputContainer = styled.label`
 
     border-radius: var(--radii);
     box-shadow: var(--shadow);
+    width: 100%;
+    margin-bottom: 1rem;
+
+    @media(min-width: 767px) {
+        width: 280px;
+        margin-bottom: 0;
+    }
 `;
 
 const Input = styled.input.attrs(() => ({

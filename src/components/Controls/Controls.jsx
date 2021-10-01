@@ -6,7 +6,14 @@ import { CustomSelect } from './CustomSelect';
 
 const Wrapper = styled.div`
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    @media(min-width: 767px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 `;
 
 const options = [

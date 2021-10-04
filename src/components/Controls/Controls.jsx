@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 
 import { Search } from './Search';
 import { CustomSelect } from './CustomSelect';
@@ -24,31 +25,26 @@ const options = [
     {value: 'Oceania', label: 'Oceania'},
 ];
 
-export const Controls = () => {
+export const Controls = (props) => {
+    const {onSearch} = props;
+    const [search, setSearch] = useState('');
+    const [region, setRegion] = useState('');
+
+    useEffect(() => {
+        onSearch(search, region || {});
+        // eslint-disable-next-line
+    }, [search, region]);
+
     return (
         <Wrapper>
-            <Search />
+            <Search search={search} setSearch={setSearch} />
             <CustomSelect
                 options={options}
                 placeholder="Filter by Region"
                 isClearable
-                // styles={{
-                //     control: (provided) => ({
-                //         ...provided,
-                //         backgroundColor: 'var(--colors-ui-base)',
-                //         color: '--colors-text',
-                //         borderRadius: 'var(--radii)',
-                //         padding: '0.25rem',
-                //         border: 'none',
-                //         boxShadow: 'var(--shadow)',
-                //     }),
-                //     option: (provided, state) => ({
-                //         ...provided,
-                //         cursor: 'pointer',
-                //         color: state.isSelected ? 'var(--colors-bg)' : 'var(--colors-text)',
-                //         backgroundColor: state.isSelected ? 'var(--colors-bg)' : 'var(--colors-ui)'
-                //       }),
-                // }}
+                isSearchable={false}
+                onChange={setRegion}
+                value={region}
             />
         </Wrapper>
     )

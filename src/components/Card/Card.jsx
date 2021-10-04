@@ -5,6 +5,7 @@ const Wrapper = styled.article`
     background-color: var(--colors-ui-base);
     box-shadow: var(--shadow);
     cursor: pointer;
+    overflow: hidden;
 `;
 
 const CardImage = styled.img`
@@ -13,6 +14,7 @@ const CardImage = styled.img`
     height: 150px;
     object-fit: cover;
     object-position: center;
+    box-shadow: var(--shadow);
 `;
 
 const CardBody = styled.div`

@@ -41,7 +41,7 @@ export const CustomSelect = styled(Select).attrs({
         color: var(--colors-text) !important;
     }
 
-    & div[id]:last-child {
+    & > div[id]:last-child {
         background-color: var(--colors-ui);
     }
 `;

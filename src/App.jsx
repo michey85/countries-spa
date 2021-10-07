@@ -11,12 +11,6 @@ import { CountryPage } from './pages/CountryPage';
 function App() {
   const [countries, setCountries] = useState([]);
 
-  const selectByCode = (codes) => {
-    const selected = countries.filter(country => codes.includes(country.alpha3Code)).map(country => country.name);
-
-    return selected.length ? selected : codes;
-  }
-
   return (
     <>
       <Header />
@@ -25,9 +19,7 @@ function App() {
           <Route path="/" exact>
             <HomePage countries={countries} setCountries={setCountries} />
           </Route>
-          <Route path="/country/:name">
-              <CountryPage selectByCode={selectByCode}/>
-          </Route>
+          <Route path="/country/:name" component={CountryPage} />
           <Route component={NotFound} />
         </Switch>
       </Main>

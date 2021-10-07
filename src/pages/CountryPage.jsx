@@ -8,7 +8,7 @@ import { Details } from '../components/Details/Details';
 import { Button } from '../components/Button/Button';
 
 
-export const CountryPage = ({selectByCode}) => {
+export const CountryPage = () => {
     const {goBack, push} = useHistory();
     const {name} = useParams();
     const [country, setCountry] = useState(null);
@@ -25,7 +25,7 @@ export const CountryPage = ({selectByCode}) => {
                 <IoArrowBack size="14" /> Back
             </Button>
             {country && (
-                <Details selectByCode={selectByCode} push={push} {...country} />
+                <Details push={push} {...country} />
             )}
         </div>
     )

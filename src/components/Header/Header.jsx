@@ -28,7 +28,7 @@ const Wrapper = styled.div`
 `;
 
 const HeaderEl = styled.header`
-    box-shadow: 0 2px 12px 5px grey;
+    box-shadow: var(--shadow);
 `;
 
 export const Header = () => {
@@ -51,7 +51,7 @@ export const Header = () => {
                         {theme === 'light' ? (
                             <IoMoonOutline size="14px" />
                         ): (
-                            <IoMoon size="14px" /> 
+                            <IoMoon size="14px" />
                         )}
                         <span
                             style={{marginLeft: '0.75rem'}}

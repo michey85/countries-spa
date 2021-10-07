@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { ALL_COUNTRIES } from '../config';
 
@@ -7,11 +8,11 @@ import { Controls } from '../components/Controls';
 import {List} from '../components/List';
 import { Card } from '../components/Card';
 
-console.log(ALL_COUNTRIES);
 
-export const HomePage = ({history: {push}}) => {
-    const [countries, setCountries] = useState([]);
-    const [filteredCountries, setFilteredCountries] = useState([]);
+export const HomePage = (props) => {
+    const {push} = useHistory();
+    const {countries = [], setCountries} = props;
+    const [filteredCountries, setFilteredCountries] = useState(countries);
 
     const handleSearch = (search, {value: region} = {}) => {
         let data = [...countries];
@@ -28,10 +29,19 @@ export const HomePage = ({history: {push}}) => {
     }
 
     useEffect(() => {
-        axios.get(ALL_COUNTRIES).then(
-            ({data}) => (setCountries(data), handleSearch())
-        );
+        if (!countries.length) {
+            axios.get(ALL_COUNTRIES).then(
+              ({data}) => (setCountries(data))
+            );
+        }
+        // eslint-disable-next-line
     }, []);
+
+    useEffect(() => {
+        handleSearch();
+
+        // eslint-disable-next-line
+    }, [countries]);
 
     return (
         <>
@@ -43,7 +53,7 @@ export const HomePage = ({history: {push}}) => {
                         title: country.name,
                         info: [
                             {
-                                title: 'Population', 
+                                title: 'Population',
                                 description: country.population.toLocaleString()
                             },
                             {

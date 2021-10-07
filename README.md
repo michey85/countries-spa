@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/react-spa-styledcomponents-NM6pG5AmE)
+- Live Site URL: [Add live site URL here](https://countries-flags-i5avbrt4f-michey85.vercel.app/)
 
 ### Built with
 

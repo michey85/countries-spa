@@ -48,6 +48,6 @@ Users should be able to:
 ## Author
 
 - Website - [MishaNep](https://mishanep.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/michey85)
-- Twitter - [@yourusername](https://www.twitter.com/pcgramota)
+- Frontend Mentor - [@michey85](https://www.frontendmentor.io/profile/michey85)
+- Twitter - [@pcgramota](https://www.twitter.com/pcgramota)
 

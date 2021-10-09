@@ -7,7 +7,7 @@ export const CustomSelect = styled(Select).attrs({
         control: (provided) => ({
             ...provided,
             backgroundColor: 'var(--colors-ui-base)',
-            color: '--colors-text',
+            color: 'var(--colors-text)',
             borderRadius: 'var(--radii)',
             padding: '0.25rem',
             border: 'none',
@@ -26,10 +26,10 @@ export const CustomSelect = styled(Select).attrs({
     border-radius: var(--radii);
     font-family: var(--family);
     border: none;
-    
+
     & > * {
         box-shadow: var(--shadow);
-        
+
     }
 
     & input {
@@ -42,6 +42,6 @@ export const CustomSelect = styled(Select).attrs({
     }
 
     & > div[id]:last-child {
-        background-color: var(--colors-ui);
+        background-color: var(--colors-ui-base);
     }
 `;

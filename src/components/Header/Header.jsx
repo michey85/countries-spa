@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { IoMoonOutline, IoMoon } from "react-icons/io5";
 
 import { Container } from '../Container';
 
-const Title = styled.a.attrs(() => ({
-    href: '/',
+const Title = styled(Link).attrs(() => ({
+    to: '/',
 }))`
     color: var(--colors-text);
     font-size: var(--fs-sm);
